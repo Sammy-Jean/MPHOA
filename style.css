@@ -292,7 +292,7 @@ img {
 /* Grids */
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmin(300px, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -407,12 +407,12 @@ img {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.4s ease;
   padding: 0 var(--spacing-md);
 }
 
 .faq-answer.active {
-  max-height: 500px;
+  max-height: 2000px;
   padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
 }
 
