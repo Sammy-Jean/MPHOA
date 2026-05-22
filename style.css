@@ -365,12 +365,14 @@ img {
   color: var(--success-green);
   font-size: 0.875rem;
 }
-/* FAQ Accordion */
+
+/* FAQ Accordion - FIXED */
 .faq-item {
   background: var(--white);
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-sm);
   box-shadow: var(--shadow-sm);
+  overflow: visible;
 }
 
 .faq-question {
@@ -405,33 +407,32 @@ img {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  padding: 0 var(--spacing-md);
 }
 
 .faq-answer.active {
-  max-height: 5000px;
-}
-
-.faq-answer-content {
+  max-height: 3000px;
   padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+  overflow: visible;
 }
 
-.faq-answer-content p {
+.faq-answer p {
   color: var(--gray-dark);
   line-height: 1.8;
   margin-bottom: 1rem;
 }
 
-.faq-answer-content p:last-child {
+.faq-answer p:last-child {
   margin-bottom: 0;
 }
 
-.faq-answer-content ul {
+.faq-answer ul {
   margin-left: 1.5rem;
   list-style: disc;
 }
 
-.faq-answer-content ul li {
+.faq-answer ul li {
   margin-bottom: 0.5rem;
   color: var(--gray-dark);
 }
