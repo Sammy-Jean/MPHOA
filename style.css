@@ -365,8 +365,7 @@ img {
   color: var(--success-green);
   font-size: 0.875rem;
 }
-
-/* FAQ Accordion - CORRECTED */
+/* FAQ Accordion */
 .faq-item {
   background: var(--white);
   border-radius: var(--border-radius);
@@ -406,34 +405,37 @@ img {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out;
-  padding: 0 var(--spacing-md);
+  transition: max-height 0.5s ease;
 }
 
 .faq-answer.active {
-  max-height: 3000px;
+  max-height: 5000px;
+}
+
+.faq-answer-content {
   padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
 }
 
-.faq-answer p {
+.faq-answer-content p {
   color: var(--gray-dark);
   line-height: 1.8;
   margin-bottom: 1rem;
 }
 
-.faq-answer p:last-child {
+.faq-answer-content p:last-child {
   margin-bottom: 0;
 }
 
-.faq-answer ul {
+.faq-answer-content ul {
   margin-left: 1.5rem;
   list-style: disc;
 }
 
-.faq-answer ul li {
+.faq-answer-content ul li {
   margin-bottom: 0.5rem;
   color: var(--gray-dark);
 }
+
 /* Footer */
 .footer {
   background: var(--black);
