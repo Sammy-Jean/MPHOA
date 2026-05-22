@@ -366,13 +366,12 @@ img {
   font-size: 0.875rem;
 }
 
-/* FAQ Accordion - FIXED */
+/* FAQ Accordion - CORRECTED */
 .faq-item {
   background: var(--white);
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-sm);
   box-shadow: var(--shadow-sm);
-  overflow: visible;
 }
 
 .faq-question {
@@ -407,14 +406,13 @@ img {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
   padding: 0 var(--spacing-md);
 }
 
 .faq-answer.active {
   max-height: 3000px;
   padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
-  overflow: visible;
 }
 
 .faq-answer p {
@@ -436,7 +434,6 @@ img {
   margin-bottom: 0.5rem;
   color: var(--gray-dark);
 }
-
 /* Footer */
 .footer {
   background: var(--black);
