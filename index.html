@@ -833,15 +833,14 @@
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  // Disable AOS on mobile to prevent glitchy animations
-  if (window.innerWidth > 768) {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      offset: 100
-    });
-  }
+  // Initialize AOS with mobile-friendly settings
+  AOS.init({
+    duration: 600,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 50,
+    disable: 'mobile'  // This disables AOS on mobile but still shows content
+  });
 </script>
 <script src="main.js"></script>
 </body>
