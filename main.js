@@ -2,13 +2,6 @@
 // MONTEREY PARK HOA - MAIN JAVASCRIPT
 // ========================================
 
-// Initialize AOS (Animate on Scroll)
-AOS.init({
-  duration: 800,
-  easing: 'ease-in-out',
-  once: true,
-  offset: 100
-});
 
 // ========================================
 // NAVIGATION
