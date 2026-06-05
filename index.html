@@ -64,6 +64,30 @@
           <a href="https://form.jotform.com/261346454128154" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex;">
             <i class="fas fa-clipboard-list"></i> Update Your Info
           </a>
+
+          <!-- ============================================================= -->
+          <!-- VOTE NOW BUTTON — COMMENTED OUT UNTIL THE VOTE OPENS.          -->
+          <!--                                                               -->
+          <!-- TO TURN IT ON MANUALLY: delete the opening "<!--" on the      -->
+          <!-- next line and the closing "-->" a few lines below, so the     -->
+          <!-- <a> button becomes live.                                      -->
+          <!--                                                               -->
+          <!-- OR leave it commented and use the automatic timed reveal      -->
+          <!-- (see the <script> block lower in this section) — set the      -->
+          <!-- date there and the button appears on its own.                 -->
+          <!-- ============================================================= -->
+          <!--
+          <a href="vote.html" id="voteNowBtn" class="btn btn-primary" style="display: inline-flex; margin-left: 0.75rem; background: #C7913B; border-color: #C7913B;">
+            <i class="fas fa-check-to-slot"></i> Vote Now
+          </a>
+          -->
+
+          <!-- Hidden placeholder used by the optional timed reveal below.
+               It stays display:none until the target date/time passes. -->
+          <a href="vote.html" id="voteNowAuto" class="btn btn-primary" style="display: none; margin-left: 0.75rem; background: #C7913B; border-color: #C7913B;">
+            <i class="fas fa-check-to-slot"></i> Vote Now
+          </a>
+
           <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">
             Keep us informed about your contact preferences and emergency contacts
           </p>
@@ -855,6 +879,47 @@
     // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
+
+  <!-- ================================================================= -->
+  <!-- OPTIONAL: AUTOMATIC TIMED REVEAL OF THE "VOTE NOW" BUTTON          -->
+  <!--                                                                   -->
+  <!-- This shows the #voteNowAuto button on its own once the date/time  -->
+  <!-- below has passed — no need to edit the page again.                -->
+  <!--                                                                   -->
+  <!-- 1. Set VOTE_OPENS to the moment voting should go live.            -->
+  <!--    Format: "YEAR-MONTH-DAYTHH:MM:SS" in 24-hour local time.       -->
+  <!--    Example below = July 10, 2026 at 6:00 PM.                      -->
+  <!-- 2. To DISABLE the timer entirely, just delete this whole script   -->
+  <!--    block (the button will then only appear if you manually        -->
+  <!--    uncomment the button markup up in the hero section).           -->
+  <!-- ================================================================= -->
+  <script>
+    (function () {
+      // ---- EDIT THIS DATE/TIME ----
+      var VOTE_OPENS = "2026-07-10T18:00:00";
+      // -----------------------------
+
+      var opensAt = new Date(VOTE_OPENS).getTime();
+      var btn = document.getElementById("voteNowAuto");
+      if (!btn) return;
+
+      function check() {
+        if (Date.now() >= opensAt) {
+          btn.style.display = "inline-flex";
+          return true;
+        }
+        return false;
+      }
+
+      // Reveal immediately if the time has already passed,
+      // otherwise check once a minute so it appears on time
+      // for anyone who leaves the page open.
+      if (!check()) {
+        setInterval(check, 60 * 1000);
+      }
+    })();
+  </script>
+
   <script src="main.js"></script>
 </body>
 </html>

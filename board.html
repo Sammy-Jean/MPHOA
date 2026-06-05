@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monterey Park HOA - Community meeting presentation and board information">
+  <title>Board &amp; Community Meeting | Monterey Park HOA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
+
+  <style>
+    /* Page-specific styles (kept here so style.css doesn't need edits) */
+    :root {
+      --mp-navy: #1C3D5A;
+      --mp-teal: #2E7D8A;
+      --mp-gold: #C7913B;
+      --mp-ink: #1F2A30;
+    }
+    .board-hero {
+      background: var(--mp-navy);
+      color: #fff;
+      padding: 6.5rem 1rem 2.5rem;
+      text-align: center;
+    }
+    .board-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      margin: 0 0 0.75rem;
+      line-height: 1.15;
+    }
+    .board-hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+    .board-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.75rem;
+    }
+    .board-actions .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-gold { background: var(--mp-gold); border-color: var(--mp-gold); color: #fff; }
+    .btn-outline-light {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.6);
+      color: #fff;
+    }
+
+    .pdf-wrap {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 0.75rem;
+    }
+    .pdf-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background: #fff;
+      border: 1px solid #e3e8e7;
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      position: sticky;
+      top: 70px;
+      z-index: 20;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .pdf-toolbar .meta { font-weight: 600; color: var(--mp-navy); }
+    .pdf-toolbar .tools { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .pdf-toolbar button {
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid #d4dad9;
+      background: #f3f5f4;
+      color: var(--mp-ink);
+      border-radius: 8px;
+      padding: 0.45rem 0.7rem;
+    }
+    .pdf-toolbar button:hover { background: #e9edec; }
+
+    #pdfViewer { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    #pdfViewer canvas {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      border: 1px solid #e3e8e7;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    .pdf-loading, .pdf-fallback {
+      text-align: center;
+      color: #5c6b72;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+    .pdf-fallback { display: none; }
+
+    .vote-section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .vote-card {
+      background: #fff;
+      border: 1px solid #e3e8e7;
+      border-left: 6px solid var(--mp-gold);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+    .vote-card h2 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--mp-navy);
+      margin-top: 0;
+    }
+    .vote-card ul { line-height: 1.7; padding-left: 1.2rem; }
+    .vote-note {
+      background: #f3f5f4;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      font-size: 0.95rem;
+      color: #45525a;
+      margin-top: 1rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 60;
+      background: rgba(0,0,0,0.25);
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+    .back-link:hover { background: rgba(0,0,0,0.4); }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
+
+  <section class="board-hero">
+    <h1>Community Meeting &amp; The Vote</h1>
+    <p>Read the full community meeting presentation below — including financial transparency, how our dues compare, your submitted questions, and the upcoming management vote. You can scroll through it right here on your phone or download a copy.</p>
+
+    <div class="board-actions">
+      <a href="Monterey_Park_Community_Meeting.pdf" download class="btn btn-gold">
+        <i class="fas fa-download"></i> Download presentation (PDF)
+      </a>
+      <a href="vote.html" class="btn btn-outline-light">
+        <i class="fas fa-check-to-slot"></i> Go to the vote
+      </a>
+    </div>
+  </section>
+
+  <div class="pdf-wrap">
+    <div class="pdf-toolbar">
+      <span class="meta"><i class="fas fa-file-powerpoint"></i> Community Meeting Presentation</span>
+      <div class="tools">
+        <button id="zoomOut" type="button" aria-label="Zoom out"><i class="fas fa-minus"></i></button>
+        <button id="zoomIn" type="button" aria-label="Zoom in"><i class="fas fa-plus"></i></button>
+        <a href="Monterey_Park_Community_Meeting.pdf" target="_blank" rel="noopener noreferrer"
+           style="text-decoration:none;"><button type="button"><i class="fas fa-up-right-from-square"></i> Open full screen</button></a>
+      </div>
+    </div>
+
+    <div id="pdfLoading" class="pdf-loading">
+      <i class="fas fa-spinner fa-spin"></i> Loading presentation…
+    </div>
+
+    <div id="pdfViewer"></div>
+
+    <div id="pdfFallback" class="pdf-fallback">
+      <p>Having trouble viewing the slides here?
+         <a href="Monterey_Park_Community_Meeting.pdf" target="_blank" rel="noopener noreferrer">
+         Tap to open the PDF directly</a> or use the download button above.</p>
+    </div>
+  </div>
+
+  <!-- ================= VOTE SECTION (links to standalone vote page) ================= -->
+  <section id="vote" class="vote-section">
+    <div class="vote-card">
+      <h2><i class="fas fa-check-to-slot" style="color:var(--mp-gold);"></i> The Management Vote</h2>
+      <p>The board has the authority to choose a management company on its own — but this decision belongs to the whole community, so we're putting it to a vote: <strong>Kuester</strong> (our current company) or <strong>Red Rock</strong> (proposed). <strong>One vote per home.</strong></p>
+
+      <div style="text-align:center; margin-top:1.25rem;">
+        <a href="vote.html" class="btn btn-gold" style="display:inline-flex; align-items:center; gap:0.5rem;">
+          <i class="fas fa-check-to-slot"></i> Go to the vote &amp; comparison
+        </a>
+      </div>
+
+      <div class="vote-note">
+        <i class="fas fa-circle-info"></i> The full Kuester vs. Red Rock comparison and the ballot live on the
+        vote page. One vote per household — the ballot will ask for your property address so each home is counted once.
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentYear"></span> Monterey Park HOA. All rights reserved. ·
+         <a href="index.html" style="color:inherit;">Return home</a></p>
+    </div>
+  </footer>
+
+  <!-- PDF.js renders the deck as scrollable images (works on all mobile browsers) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    const PDF_URL = "Monterey_Park_Community_Meeting.pdf";
+    const viewer = document.getElementById('pdfViewer');
+    const loading = document.getElementById('pdfLoading');
+    const fallback = document.getElementById('pdfFallback');
+
+    let pdfDoc = null;
+    let scale = 1.0;            // logical scale; combined with device pixel ratio for crispness
+    const renderedPages = {};   // pageNum -> canvas
+
+    if (window['pdfjsLib']) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+      pdfjsLib.getDocument(PDF_URL).promise.then(function (doc) {
+        pdfDoc = doc;
+        loading.style.display = 'none';
+        renderAll();
+      }).catch(function (err) {
+        console.error('PDF load error:', err);
+        loading.style.display = 'none';
+        fallback.style.display = 'block';
+      });
+    } else {
+      loading.style.display = 'none';
+      fallback.style.display = 'block';
+    }
+
+    function renderAll() {
+      viewer.innerHTML = '';
+      for (let n = 1; n <= pdfDoc.numPages; n++) {
+        renderPage(n);
+      }
+    }
+
+    function renderPage(num) {
+      pdfDoc.getPage(num).then(function (page) {
+        const dpr = window.devicePixelRatio || 1;
+        const viewport = page.getViewport({ scale: scale });
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = Math.floor(viewport.width * dpr);
+        canvas.height = Math.floor(viewport.height * dpr);
+        canvas.style.aspectRatio = (viewport.width / viewport.height).toFixed(4);
+
+        page.render({
+          canvasContext: ctx,
+          viewport: viewport,
+          transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : null
+        });
+
+        // keep pages in order
+        renderedPages[num] = canvas;
+        let placed = false;
+        for (let k = num - 1; k >= 1; k--) {
+          if (renderedPages[k] && renderedPages[k].parentNode) {
+            renderedPages[k].insertAdjacentElement('afterend', canvas);
+            placed = true;
+            break;
+          }
+        }
+        if (!placed) viewer.prepend(canvas);
+      });
+    }
+
+    document.getElementById('zoomIn').addEventListener('click', function () {
+      scale = Math.min(scale + 0.25, 3);
+      if (pdfDoc) renderAll();
+    });
+    document.getElementById('zoomOut').addEventListener('click', function () {
+      scale = Math.max(scale - 0.25, 0.5);
+      if (pdfDoc) renderAll();
+    });
+  </script>
+</body>
+</html>
