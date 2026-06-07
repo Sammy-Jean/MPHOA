@@ -310,7 +310,21 @@
           <span class="qa-q-text">What about speeding and other unsafe behavior in the neighborhood?</span>
           <i class="fas fa-chevron-down qa-icon"></i>
         </button>
-        <div class="qa-a"><p>Safety matters to all of us. Public streets are handled by local law enforcement, and we encourage residents to report unsafe driving. The board is also exploring options the community can weigh in on.</p></div>
+        <div class="qa-a"><p>Safety matters to all of us. We are currently inquiring with York County about their speed table and speed bump program to see if our community is eligible. If we are not eligible, we will look at other ways to slow speeders in the neighborhood. We encourage residents to report unsafe driving as well.</p></div>
+      </div>
+      <div class="qa-item">
+        <button class="qa-q" type="button" aria-expanded="false">
+          <span class="qa-q-text">Can we add a 4-way stop at Olympia Way and Laguna Court?</span>
+          <i class="fas fa-chevron-down qa-icon"></i>
+        </button>
+        <div class="qa-a"><p>We would like to. Because these are public roads, a traffic study has to be done first. That study is part of the same York County program we are looking into, which also covers speed limit signs. We are working through that process now.</p></div>
+      </div>
+      <div class="qa-item">
+        <button class="qa-q" type="button" aria-expanded="false">
+          <span class="qa-q-text">Are you repairing the exterior lights?</span>
+          <i class="fas fa-chevron-down qa-icon"></i>
+        </button>
+        <div class="qa-a"><p>Yes. We are currently working with Duke Energy to repair the lights, and the permits have been pulled. The remaining task is to find a financially responsible way to pay for the repair without exceeding our budget, and we are working on that now.</p></div>
       </div>
       <div class="qa-item">
         <button class="qa-q" type="button" aria-expanded="false">
@@ -462,10 +476,17 @@
       if (pdfDoc) renderAll();
     });
 
-    // Q&A accordion toggle
+    // Q&A accordion toggle (only one open at a time)
     document.querySelectorAll('.qa-q').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var expanded = btn.getAttribute('aria-expanded') === 'true';
+        // close all others first
+        document.querySelectorAll('.qa-q').forEach(function (other) {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            other.nextElementSibling.style.maxHeight = null;
+          }
+        });
         var answer = btn.nextElementSibling;
         if (expanded) {
           btn.setAttribute('aria-expanded', 'false');
