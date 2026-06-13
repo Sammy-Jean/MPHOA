@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monterey Park HOA - Architectural Review (ARC) Guidelines">
+  <title>ARC Guidelines | Monterey Park HOA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
+
+  <style>
+    :root {
+      --mp-navy: #1C3D5A;
+      --mp-teal: #2E7D8A;
+      --mp-gold: #C7913B;
+      --mp-ink: #1F2A30;
+      --mp-green: #16a34a;
+      --mp-light: #f1f5f9;
+      --mp-slate: #334155;
+      --mp-subtle: #64748b;
+    }
+
+    /* small home link top-left, matching board page */
+    .home-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+      background: rgba(28, 61, 90, 0.92);
+      color: #fff;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+    }
+    .home-link:hover { background: var(--mp-navy); }
+
+    /* hero */
+    .arc-hero {
+      background: var(--mp-navy);
+      color: #fff;
+      padding: 6.5rem 1rem 2.5rem;
+      text-align: center;
+    }
+    .arc-hero .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mp-gold);
+      margin: 0 0 0.6rem;
+    }
+    .arc-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      margin: 0 0 0.75rem;
+      line-height: 1.15;
+    }
+    .arc-hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+    .arc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.3rem;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: opacity 0.15s ease;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-gold { background: var(--mp-gold); border-color: var(--mp-gold); color: #fff; }
+    .btn-outline-light { background: transparent; border-color: rgba(255,255,255,0.6); color: #fff; }
+
+    /* main content wrapper */
+    .arc-wrap {
+      max-width: 920px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--mp-ink);
+      line-height: 1.65;
+    }
+
+    /* guiding principle callout */
+    .principle {
+      background: var(--mp-light);
+      border-left: 6px solid var(--mp-gold);
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+      margin: 0 0 2rem;
+    }
+    .principle h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+      color: var(--mp-slate);
+    }
+    .principle p {
+      margin: 0;
+      color: var(--mp-slate);
+      font-size: 1.02rem;
+    }
+    .principle strong { color: var(--mp-slate); }
+
+    /* "what's new" highlight */
+    .whats-new {
+      background: #fff8e7;
+      border: 1.5px solid var(--mp-gold);
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+      margin: 0 0 2.25rem;
+    }
+    .whats-new .tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mp-gold);
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+    .whats-new ul {
+      margin: 0.6rem 0 0;
+      padding-left: 1.3rem;
+    }
+    .whats-new li {
+      margin: 0.4rem 0;
+      color: var(--mp-slate);
+    }
+
+    /* prominent notice/fee callout at top */
+    .notice-card {
+      background: var(--mp-navy);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem 1.6rem;
+      margin: 0 0 2rem;
+      border-left: 6px solid var(--mp-gold);
+    }
+    .notice-card .notice-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mp-gold);
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+    .notice-card h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.35rem;
+      margin: 0 0 1rem;
+      color: #fff;
+      padding: 0;
+      border: none;
+    }
+    .arc-wrap .notice-card p {
+      color: #e8edf1;
+      margin: 0.7rem 0;
+      font-size: 0.98rem;
+    }
+    .arc-wrap .notice-card p strong { color: #fff; }
+    .arc-wrap .notice-card .note {
+      margin-top: 1.2rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #c2cad2;
+    }
+    .arc-wrap .notice-card .note a { color: var(--mp-gold); font-weight: 600; }
+
+    /* section heading */
+    .arc-wrap h2.section-h {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: var(--mp-slate);
+      margin: 2.25rem 0 0.5rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--mp-gold);
+    }
+    .arc-wrap p { color: var(--mp-slate); margin: 0.6rem 0; }
+
+    /* two-column comparison */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0 2rem;
+    }
+    @media (max-width: 640px) {
+      .compare { grid-template-columns: 1fr; }
+    }
+    .compare-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .compare-head {
+      padding: 0.9rem 1.1rem;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    .compare-head.go { background: var(--mp-green); }
+    .compare-head.req { background: var(--mp-slate); }
+    .compare-body {
+      background: var(--mp-light);
+      padding: 1rem 1.25rem;
+    }
+    .compare-body ul { margin: 0; padding-left: 1.1rem; }
+    .compare-body li { margin: 0.45rem 0; color: var(--mp-slate); }
+
+    /* item bullets in lists */
+    .arc-wrap ul.detail { padding-left: 1.3rem; }
+    .arc-wrap ul.detail li { margin: 0.35rem 0; }
+
+    /* submit callout */
+    .submit-card {
+      background: var(--mp-navy);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.6rem 1.6rem;
+      margin: 2.5rem 0 2rem;
+      text-align: center;
+    }
+    .submit-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      margin: 0 0 0.4rem;
+    }
+    .submit-card p {
+      color: #d8dedc;
+      margin: 0 0 1.1rem;
+    }
+    .submit-card .btn { background: var(--mp-gold); color: #fff; border-color: var(--mp-gold); }
+
+    /* footer (matches site) */
+    .footer {
+      background: var(--mp-navy);
+      color: #cbd5e1;
+      padding: 1.8rem 1rem 2rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+    .footer a { color: var(--mp-gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="home-link"><i class="fa-solid fa-house"></i> Home</a>
+
+  <section class="arc-hero">
+    <p class="eyebrow">Architectural Review</p>
+    <h1>ARC Guidelines</h1>
+    <p>Clear, plain-language guidelines for what you can do without a request, and what needs board approval. Updated for our community by your HOA Board.</p>
+  </section>
+
+  <div class="arc-wrap">
+
+    <!-- Guiding principle callout -->
+    <div class="principle">
+      <h2>Our guiding principle</h2>
+      <p><strong>Maintenance items do not need an ARC request. Structural or permanent changes do.</strong> When in doubt, ask yourself: am I keeping things up, or am I changing something? Upkeep is routine. Permanent changes need approval.</p>
+    </div>
+
+    <!-- What's New -->
+    <div class="whats-new">
+      <p class="tag">What's New</p>
+      <p style="margin:0;color:#64748b;font-style:italic">A summary of recent updates to our ARC approach.</p>
+      <ul>
+        <li>A limited list of common items, listed below, no longer requires an ARC request.</li>
+        <li>Everything else still requires an ARC request, including all structural and permanent changes.</li>
+        <li>The board is reviewing the ARC fee structure to better serve homeowners.</li>
+      </ul>
+    </div>
+
+    <!-- No ARC needed (closed list) -->
+    <h2 class="section-h">No ARC request needed (limited list)</h2>
+    <p>Below is a list of common items homeowners have requested. <strong>These items, and only these items, no longer require an ARC request.</strong> Everything else still requires an ARC request.</p>
+    <ul class="detail">
+      <li>Mulch (any natural wood color, including brown, black, red, and cedar)</li>
+      <li>Pine needles</li>
+      <li>Wood chips</li>
+      <li>Nuggets</li>
+      <li>Rocks</li>
+      <li>Borders (stone or plastic barriers for landscaping)</li>
+      <li>Garbage can covers, provided they are solid construction (no holes or lattice) and a solid color matching your siding or another color on the home</li>
+      <li>Planting flowers</li>
+      <li>Storm doors that match the house or door color</li>
+    </ul>
+    <p style="font-style:italic;color:var(--mp-subtle);margin-top:0.75rem">These changes apply only to the items listed above. All other parts of our CC&amp;Rs and ARC guidelines still apply. If your project is not on the list, please submit an ARC request.</p>
+
+    <!-- Prominent notice/fee callout -->
+    <div class="notice-card" style="margin-top:2.25rem">
+      <p class="notice-tag">Important &middot; If you received a notice or paid the fee</p>
+      <h2>If you received a notice or paid the fee</h2>
+      <p><strong>If you received a notice on or after June 2nd</strong> asking you to submit an ARC request for an item on the list above, you can respectfully disregard that notification.</p>
+      <p><strong>If you paid the $38 ARC fee on or after June 2nd</strong> for a request for an item on the list above, a credit will be issued on your next billing cycle through Kuester.</p>
+      <p><strong>If you received a notice before June 2nd,</strong> please continue to submit the ARC request as originally instructed.</p>
+      <p class="note">Kuester is currently updating their system to reflect these changes. For any questions in the meantime, please email the board at <a href="mailto:info@mpyork.com">info@mpyork.com</a>.</p>
+    </div>
+
+    <!-- When in doubt note -->
+    <p style="margin-top:1.5rem;font-style:italic;color:var(--mp-subtle)">If you are unsure whether your project requires an ARC request, please reach out to the management company before starting work. We would rather answer a quick question than ask a homeowner to undo something.</p>
+
+    <!-- Submit -->
+    <div class="submit-card" id="submit">
+      <h3>How to submit an ARC request</h3>
+      <p>Log in to your Kuester portal or call. You can include as many projects as you like on a single request, and we encourage it.</p>
+      <a href="https://www.kuester.com" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Submit at kuester.com</a>
+      <p style="margin-top:0.9rem;font-size:0.92rem;color:#aab8c0">Or call (704) 973-9019</p>
+    </div>
+
+    <!-- Review process -->
+    <h2 class="section-h">The review process</h2>
+    <p>The management company manages the administrative side of each ARC request. They keep records, communicate with the homeowner during the process, and submit the completed request to the board for final approval. The board's role is the final review and decision.</p>
+    <p>The ARC fee on a request is the management company's charge for processing the request, not a board fee. The HOA does not keep any portion of the fee, and the board does not set it. The board is currently reviewing the fee structure to better serve homeowners.</p>
+
+  </div>
+
+  <footer class="footer">
+    <p>Monterey Park HOA &middot; York, SC &middot; <a href="https://mpyork.com">mpyork.com</a> &middot; <a href="mailto:info@mpyork.com">info@mpyork.com</a></p>
+    <p style="margin-top:0.5rem">&copy; <span id="currentYear"></span> Monterey Park HOA. All rights reserved. &middot; <a href="index.html">Return home</a></p>
+  </footer>
+
+  <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
