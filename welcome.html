@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Monterey Park HOA - A starter guide for new residents and a refresher for everyone else.">
+  <title>Welcome | Monterey Park HOA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
+
+  <style>
+    :root {
+      --mp-navy: #1C3D5A;
+      --mp-teal: #2E7D8A;
+      --mp-gold: #C7913B;
+      --mp-ink: #1F2A30;
+      --mp-green: #16a34a;
+      --mp-light: #f1f5f9;
+      --mp-slate: #334155;
+      --mp-subtle: #64748b;
+    }
+
+    .home-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+      background: rgba(28, 61, 90, 0.92);
+      color: #fff;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+    }
+    .home-link:hover { background: var(--mp-navy); }
+
+    .welcome-hero {
+      background: var(--mp-navy);
+      color: #fff;
+      padding: 6.5rem 1rem 2.5rem;
+      text-align: center;
+    }
+    .welcome-hero .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mp-gold);
+      margin: 0 0 0.6rem;
+    }
+    .welcome-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin: 0 0 0.75rem;
+      line-height: 1.15;
+    }
+    .welcome-hero p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    .welcome-wrap {
+      max-width: 920px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--mp-ink);
+      line-height: 1.65;
+    }
+
+    /* Quick orientation callout */
+    .orientation {
+      background: var(--mp-light);
+      border-left: 6px solid var(--mp-gold);
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+      margin: 0 0 2rem;
+    }
+    .orientation h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+      color: var(--mp-slate);
+    }
+    .orientation p {
+      margin: 0.5rem 0;
+      color: var(--mp-slate);
+    }
+    .orientation p:last-child { margin-bottom: 0; }
+
+    /* Section headings */
+    .welcome-wrap h2.section-h {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: var(--mp-slate);
+      margin: 2.25rem 0 0.5rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--mp-gold);
+    }
+    .welcome-wrap p { color: var(--mp-slate); margin: 0.6rem 0; }
+    .welcome-wrap ul.detail { padding-left: 1.3rem; }
+    .welcome-wrap ul.detail li { margin: 0.45rem 0; color: var(--mp-slate); }
+
+    /* Quick-info cards */
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.25rem 0 2rem;
+    }
+    @media (max-width: 640px) {
+      .quick-grid { grid-template-columns: 1fr; }
+    }
+    .quick-card {
+      background: var(--mp-light);
+      border-radius: 10px;
+      padding: 1.2rem 1.3rem;
+    }
+    .quick-card .icon {
+      width: 38px;
+      height: 38px;
+      background: var(--mp-navy);
+      color: var(--mp-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+    .quick-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: var(--mp-slate);
+      margin: 0 0 0.4rem;
+    }
+    .quick-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--mp-slate);
+    }
+    .quick-card a {
+      color: var(--mp-gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Common-questions style (simple, not accordion) */
+    .qcq {
+      margin: 1.5rem 0;
+    }
+    .qcq h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: var(--mp-slate);
+      margin: 1.2rem 0 0.3rem;
+    }
+    .qcq p { margin: 0.4rem 0; }
+
+    /* Highlighted ARC card */
+    .arc-card {
+      background: var(--mp-navy);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .arc-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      margin: 0 0 0.5rem;
+      color: #fff;
+    }
+    .arc-card p {
+      color: #e8edf1;
+      margin: 0 0 1.2rem;
+    }
+    .arc-card .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.3rem;
+      background: var(--mp-gold);
+      color: #fff;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .arc-card .btn:hover { opacity: 0.9; }
+
+    /* Get involved card */
+    .involved-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0 2rem;
+    }
+    @media (max-width: 640px) { .involved-grid { grid-template-columns: 1fr; } }
+    .involved-card {
+      border: 1.5px solid var(--mp-light);
+      border-radius: 10px;
+      padding: 1.2rem 1.3rem;
+    }
+    .involved-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: var(--mp-slate);
+      margin: 0 0 0.4rem;
+    }
+    .involved-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--mp-slate);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--mp-navy);
+      color: #cbd5e1;
+      padding: 1.8rem 1rem 2rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+    .footer a { color: var(--mp-gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="home-link"><i class="fa-solid fa-house"></i> Home</a>
+
+  <section class="welcome-hero">
+    <p class="eyebrow">For new residents and a refresher for everyone</p>
+    <h1>Welcome to Monterey Park</h1>
+    <p>Whether you just moved in or you have been here for years, here is what you need to know about your community, how things work, and where to find what you need.</p>
+  </section>
+
+  <div class="welcome-wrap">
+
+    <!-- Orientation in 30 seconds -->
+    <div class="orientation">
+      <h2>The 30-second orientation</h2>
+      <p>Monterey Park is a 157-home community in York, South Carolina, governed by a volunteer board of homeowners.</p>
+      <p>Day-to-day operations (payments, work orders, ARC requests, notices) are handled by our management company, <strong>Kuester</strong>. The board sets direction, makes decisions, and answers to the community.</p>
+      <p>Most questions are answered on this page. Anything you cannot find here, please email <a href="mailto:info@mpyork.com" style="color:var(--mp-gold);font-weight:600;text-decoration:none">info@mpyork.com</a> and we will get back to you.</p>
+    </div>
+
+    <!-- The basics -->
+    <h2 class="section-h">The basics</h2>
+    <p>The most common things you will need:</p>
+    <div class="quick-grid">
+      <div class="quick-card">
+        <div class="icon"><i class="fa-solid fa-credit-card"></i></div>
+        <h3>Pay HOA dues</h3>
+        <p>Dues are paid through Kuester. Log in at <a href="https://kuester.com" target="_blank" rel="noopener noreferrer">kuester.com</a> or call (704) 973-9019.</p>
+      </div>
+      <div class="quick-card">
+        <div class="icon"><i class="fa-solid fa-wrench"></i></div>
+        <h3>Submit a work request</h3>
+        <p>For broken lights, potholes, damaged signs, or other common-area issues. Submit through Kuester. No fee.</p>
+      </div>
+      <div class="quick-card">
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+        <h3>Contact the board</h3>
+        <p>Email <a href="mailto:info@mpyork.com">info@mpyork.com</a>. We aim to respond within 2-3 business days.</p>
+      </div>
+      <div class="quick-card">
+        <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h3>Governing documents</h3>
+        <p>The CC&amp;Rs, Bylaws, and Architectural Guidelines are available through the Kuester portal.</p>
+      </div>
+    </div>
+
+    <!-- Common questions section -->
+    <h2 class="section-h">The most common questions</h2>
+    <p>If you only read one section, read this one. These are the things most often asked.</p>
+
+    <div class="qcq">
+      <h3>Trash day</h3>
+      <p>Containers can go out no earlier than <strong>5:00 PM the day before pickup</strong> and must be brought back in by <strong>9:00 PM on pickup day</strong>. At all other times they need to be stored out of sight. The trash service provider is selected by the Association.</p>
+
+      <h3>Parking</h3>
+      <p>Park in your garage or your own driveway. Street parking within the community is generally prohibited. Vehicles too large for a driveway may park on the street directly in front of the owner's lot during daylight hours only. No vehicle may block a sidewalk.</p>
+      <p>Boats, campers, RVs, ATVs, trailers, tractors, and mowers must be kept in an enclosed garage or screened out of sight.</p>
+
+      <h3>Pets</h3>
+      <p>Dogs, cats, and other common household pets are welcome for personal (non-commercial) use, with a limit of no more than <strong>3 dogs, 3 cats, and/or 3 of any other household pet</strong> (excluding fish). Pets must be leashed on Association property at all times, and owners must clean up after them.</p>
+
+      <h3>Holiday decorations</h3>
+      <p>Temporary holiday decorations are permitted <strong>October 1 through January 31</strong>. For other holidays, decorations may go up one week before and must come down one week after.</p>
+
+      <h3>Mailbox and trash can covers</h3>
+      <p>Garbage can covers do not require an ARC request, provided they are solid construction (no holes or lattice) and a solid color matching your siding or another color on the home.</p>
+
+      <h3>Signs</h3>
+      <p>Most signs need prior written approval. The main exception is one "for sale" sign no larger than 30" x 24".</p>
+    </div>
+
+    <!-- ARC pointer (highlighted card) -->
+    <div class="arc-card">
+      <h3>Making changes to your home or property?</h3>
+      <p>A limited list of common items no longer requires an ARC request. Everything else still does. See the full list and how to submit a request:</p>
+      <a href="arc.html" class="btn"><i class="fa-solid fa-arrow-right"></i> View ARC Guidelines</a>
+    </div>
+
+    <!-- Community amenities -->
+    <h2 class="section-h">Community amenities and features</h2>
+    <ul class="detail">
+      <li><strong>Playground</strong>, including a safety fence, toys, and chalkboard circles for kids</li>
+      <li><strong>Walking trail</strong> along Olympia Way</li>
+      <li><strong>Common areas</strong> maintained by the Association, including the dry pond area</li>
+      <li><strong>Community events</strong> held throughout the year (spring cookout, Easter egg hunt, and more to come)</li>
+    </ul>
+
+    <!-- Staying connected -->
+    <h2 class="section-h">Stay connected</h2>
+    <p>The board communicates with homeowners through:</p>
+    <ul class="detail">
+      <li><strong>Email and text alerts</strong> for community updates, meeting notices, and time-sensitive items. Update your contact info to make sure you do not miss anything.</li>
+      <li><strong>This website</strong> at <a href="https://mpyork.com">mpyork.com</a> for guidelines, governing documents, and current priorities.</li>
+      <li><strong>Quarterly community meetings</strong> where the board shares updates and homeowners can ask questions.</li>
+    </ul>
+    <p style="margin-top:1rem"><a href="https://form.jotform.com/261346454128154" target="_blank" rel="noopener noreferrer" style="color:var(--mp-gold);font-weight:600;text-decoration:none">Update your contact info &rarr;</a></p>
+
+    <!-- Get involved -->
+    <h2 class="section-h">Get involved</h2>
+    <p>This is your community. The more homeowners who participate, the better it works for everyone.</p>
+    <div class="involved-grid">
+      <div class="involved-card">
+        <h3><i class="fa-solid fa-calendar-check" style="color:var(--mp-gold)"></i> &nbsp;Attend a meeting</h3>
+        <p>Community meetings are held quarterly. All homeowners are welcome. Meeting details are sent via email and text.</p>
+      </div>
+      <div class="involved-card">
+        <h3><i class="fa-solid fa-users" style="color:var(--mp-gold)"></i> &nbsp;Join a committee</h3>
+        <p>Events, communications, beautification, and more. <a href="https://form.jotform.com/261376309344156" target="_blank" rel="noopener noreferrer" style="color:var(--mp-gold);font-weight:600;text-decoration:none">Express interest &rarr;</a></p>
+      </div>
+    </div>
+
+    <!-- Useful links -->
+    <h2 class="section-h">Useful links</h2>
+    <ul class="detail">
+      <li><strong>Board contact:</strong> <a href="mailto:info@mpyork.com">info@mpyork.com</a></li>
+      <li><strong>Kuester (management):</strong> <a href="https://kuester.com" target="_blank" rel="noopener noreferrer">kuester.com</a> &middot; (704) 973-9019</li>
+      <li><strong>City of York:</strong> <a href="https://yorksc.gov" target="_blank" rel="noopener noreferrer">yorksc.gov</a> (city services, utilities, trash and recycling)</li>
+      <li><strong>ARC Guidelines:</strong> <a href="arc.html">mpyork.com/arc</a></li>
+      <li><strong>Emergency:</strong> 911</li>
+    </ul>
+
+    <p style="margin-top:2rem;font-style:italic;color:var(--mp-subtle)">Welcome to the neighborhood. We are glad you are here.</p>
+
+  </div>
+
+  <footer class="footer">
+    <p>Monterey Park HOA &middot; York, SC &middot; <a href="https://mpyork.com">mpyork.com</a> &middot; <a href="mailto:info@mpyork.com">info@mpyork.com</a></p>
+    <p style="margin-top:0.5rem">&copy; <span id="currentYear"></span> Monterey Park HOA. All rights reserved. &middot; <a href="index.html">Return home</a></p>
+  </footer>
+
+  <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
