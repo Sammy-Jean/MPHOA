@@ -132,50 +132,6 @@
   </style>
 </head>
 <body>
-<!-- ===== TIME GATE (reveals June 24, 9:00 PM Eastern) ===== -->
-<div id="mpGate" style="position:fixed; inset:0; z-index:99999; background:#1C3D5A; display:flex; align-items:center; justify-content:center; text-align:center; font-family:Georgia,'Times New Roman',serif; padding:24px;">
-  <div style="max-width:560px;">
-    <div style="font-family:Arial,sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:#C7913B; font-weight:700; margin-bottom:18px;">Monterey Park HOA</div>
-    <h1 style="color:#ffffff; font-size:30px; line-height:1.3; margin:0 0 14px 0;">Available Soon</h1>
-    <p style="color:#D8DEDC; font-family:Arial,sans-serif; font-size:16px; line-height:1.6; margin:0 0 28px 0;">This page will be available after our community meeting begins. Please check back soon.</p>
-    <div id="mpCountdown" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:24px;"></div>
-  </div>
-</div>
-<script>
-(function(){
-  // Target: June 24, 2026, 9:00 PM Eastern (EDT = UTC-4 in June)
-  // Expressed as a fixed UTC instant so it is identical for every visitor regardless of local timezone or VPN.
-  var TARGET = Date.UTC(2026, 5, 25, 21, 0, 0); // June 25 21:00 UTC == June 25 17:00 (5:00 PM) EDT
-  var gate = document.getElementById('mpGate');
-  var cd = document.getElementById('mpCountdown');
-  function box(n,label){
-    return '<div style="background:rgba(255,255,255,0.08); border:1px solid rgba(199,145,59,0.5); border-radius:10px; padding:14px 10px; min-width:74px;">'
-      + '<div style="color:#ffffff; font-size:32px; font-weight:700; font-family:Arial,sans-serif; line-height:1;">'+n+'</div>'
-      + '<div style="color:#C7913B; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-family:Arial,sans-serif; margin-top:6px;">'+label+'</div></div>';
-  }
-  function pad(x){ return (x<10?'0':'')+x; }
-  function tick(){
-    var now = Date.now(); // UTC epoch, unaffected by local clock display
-    var diff = TARGET - now;
-    if (diff <= 0){
-      if (gate && gate.parentNode){ gate.parentNode.removeChild(gate); }
-      document.documentElement.style.overflow = '';
-      return;
-    }
-    var s = Math.floor(diff/1000);
-    var d = Math.floor(s/86400); s-=d*86400;
-    var h = Math.floor(s/3600);  s-=h*3600;
-    var m = Math.floor(s/60);    s-=m*60;
-    cd.innerHTML = box(d,'Days') + box(pad(h),'Hours') + box(pad(m),'Min') + box(pad(s),'Sec');
-    setTimeout(tick, 1000);
-  }
-  // lock scroll while gated
-  document.documentElement.style.overflow = 'hidden';
-  tick();
-})();
-</script>
-<!-- ===== END TIME GATE ===== -->
-
 
   <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
 
@@ -184,7 +140,6 @@
     <h1>The Management Choice</h1>
     <p>The board has the authority to choose a management company on its own, but this decision belongs to the whole community, so we're putting the choice to you. Review the comparison below and make your choice: one choice per home.</p>
     <div class="vote-actions">
-      <a href="board.html" class="btn btn-outline-light"><i class="fas fa-file-powerpoint"></i> View the full presentation</a>
       <a href="#how-to-vote" class="btn btn-gold"><i class="fas fa-check-to-slot"></i> How to choose</a>
     </div>
   </section>
@@ -268,7 +223,7 @@
       <div class="step">
         <div class="num">1</div>
         <h4>Review</h4>
-        <p>Read the comparison above and the full presentation.</p>
+        <p>Read the comparison above.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
@@ -299,7 +254,6 @@
   <footer class="footer">
     <div class="footer-bottom">
       <p>&copy; <span id="currentYear"></span> Monterey Park HOA. All rights reserved. ·
-         <a href="board.html" style="color:inherit;">View presentation</a> ·
          <a href="index.html" style="color:inherit;">Return home</a></p>
     </div>
   </footer>
