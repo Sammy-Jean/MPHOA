@@ -1,75 +1,266 @@
-<div style="background-color:#f1f5f9; padding:24px 0; font-family:Georgia, 'Times New Roman', serif;">
-<div style="max-width:600px; margin:0 auto; background-color:#ffffff; border:1px solid #cbd5e1;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monterey Park HOA - Community Announcement">
+  <title>Community Announcement | Monterey Park HOA</title>
 
-<!-- Slate masthead -->
-<div style="background-color:#334155; padding:24px 32px; text-align:center;">
-<div style="font-family:Arial, sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#f39c0c; font-weight:700; margin-bottom:6px;">Monterey Park HOA</div>
-<div style="font-family:Georgia, serif; font-size:24px; color:#ffffff; font-weight:normal; letter-spacing:1px;">Park Notes</div>
-</div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-<!-- Gold rule -->
-<div style="height:3px; background-color:#f39c0c;"></div>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
 
-<!-- Body -->
-<div style="padding:32px;">
+  <style>
+    :root {
+      --mp-navy: #1C3D5A;
+      --mp-teal: #2E7D8A;
+      --mp-gold: #C7913B;
+      --mp-ink: #1F2A30;
+      --mp-cream: #F4F0E6;
+      --mp-gray: #F3F5F4;
+      --mp-line: #e3e8e7;
+    }
 
-<div style="font-family:Arial, sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#64748b; font-weight:700; margin-bottom:8px;">A Note from the Board</div>
+    .ann-hero {
+      background: var(--mp-navy);
+      color: #fff;
+      padding: 5.5rem 1rem 2.5rem;
+      text-align: center;
+    }
+    .ann-hero .kicker {
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--mp-gold);
+      margin-bottom: 0.5rem;
+    }
+    .ann-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      margin: 0 0 0.9rem;
+      line-height: 1.12;
+    }
+    .ann-hero .subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.06rem;
+      line-height: 1.6;
+      opacity: 0.93;
+    }
 
-<h1 style="font-family:Georgia, serif; font-size:24px; color:#334155; margin:0 0 20px 0; font-weight:normal;">Thank you, Tracy</h1>
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      color: #fff; text-decoration: none; font-weight: 600;
+      position: fixed; top: 1rem; left: 1rem; z-index: 60;
+      background: rgba(0,0,0,0.25); padding: 0.5rem 0.85rem; border-radius: 999px; backdrop-filter: blur(4px);
+    }
+    .back-link:hover { background: rgba(0,0,0,0.4); }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 16px 0;">We want to share with the community that Tracy has decided to step down from the board, for personal and health reasons.</p>
+    .wrap { max-width: 760px; margin: 2.5rem auto; padding: 0 1.25rem; }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 16px 0;">Tracy has served thoughtfully since the homeowner-led board began in January. She contributed time, energy, and care to the work of standing up our community's first resident-led governance. We are deeply grateful for everything she gave to this community, and we will miss her on the board.</p>
+    .ann-section {
+      margin-bottom: 2.5rem;
+    }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 16px 0;">We respect her decision fully, and we ask the community to do the same. Please join us in wishing Tracy and her family well.</p>
+    .ann-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: var(--mp-navy);
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 32px 0;">Tracy, thank you. For your service, your thoughtfulness, and your care. We wish you and your family the very best.</p>
+    .ann-section h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem;
+      color: var(--mp-navy);
+      margin: 1.5rem 0 0.75rem;
+      font-weight: 600;
+    }
 
-<!-- Volunteer respect section -->
-<div style="border-top:1px solid #cbd5e1; margin:0 0 24px 0;"></div>
+    .ann-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--mp-ink);
+      margin: 0 0 1.1rem;
+    }
 
-<div style="font-family:Arial, sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#64748b; font-weight:700; margin-bottom:8px;">Our Community Standard</div>
+    .highlight-card {
+      background: var(--mp-cream);
+      border-left: 5px solid var(--mp-gold);
+      padding: 1.4rem 1.6rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
 
-<h2 style="font-family:Georgia, serif; font-size:20px; color:#334155; margin:0 0 16px 0; font-weight:normal;">Respect for those who serve</h2>
+    .highlight-card .label {
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--mp-gold);
+      margin-bottom: 0.6rem;
+    }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 32px 0;">Volunteer board members give their time to serve this community. They deserve to be able to do that work with the kind of respect that any neighbor would extend to another. That standard matters not just for the people currently serving, but for everyone who may serve in the future.</p>
+    .highlight-card p {
+      margin: 0 0 0.8rem;
+      font-size: 1.02rem;
+    }
+    .highlight-card p:last-child {
+      margin: 0;
+    }
 
-<!-- Process section -->
-<div style="border-top:1px solid #cbd5e1; margin:0 0 24px 0;"></div>
+    .process-list {
+      background: var(--mp-gray);
+      border: 1px solid var(--mp-line);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0;
+    }
 
-<div style="font-family:Arial, sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#64748b; font-weight:700; margin-bottom:8px;">What Comes Next</div>
+    .process-step {
+      display: flex;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--mp-line);
+    }
+    .process-step:last-child {
+      border-bottom: none;
+    }
 
-<h2 style="font-family:Georgia, serif; font-size:20px; color:#334155; margin:0 0 16px 0; font-weight:normal;">Filling the open board seat</h2>
+    .process-step .step-date {
+      flex: 0 0 130px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: var(--mp-navy);
+      font-size: 0.95rem;
+    }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 16px 0;">Our bylaws, Article V Section 4(b), provide that vacancies caused by resignation are filled by majority vote of the remaining members of the board. Our bylaws do not permit an official membership vote to fill a vacancy during a board member's term. While we are not required to do this, we believe it is a good opportunity to promote transparency and encourage community involvement in the process.</p>
+    .process-step .step-text {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--mp-ink);
+    }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 16px 0;">Over the next several weeks, the board will:</p>
+    .divider {
+      height: 1px;
+      background: var(--mp-line);
+      margin: 2.5rem 0;
+    }
 
-<ul style="font-family:Georgia, serif; font-size:16px; line-height:1.7; color:#334155; margin:0 0 20px 0; padding-left:24px;">
-<li style="margin-bottom:8px;">Open a two-week window for neighbors to apply (July 1 - July 15)</li>
-<li style="margin-bottom:8px;">Conduct interviews with applicants (July 16 - July 22)</li>
-<li style="margin-bottom:8px;">Identify finalists based on our criteria (July 23 - July 24)</li>
-<li style="margin-bottom:8px;">Hold an informal, non-binding community vote on the finalists (July 25 - August 1)</li>
-<li>Make the appointment and announce our decision (August 5)</li>
-</ul>
+    .signature {
+      font-style: italic;
+      color: var(--mp-ink);
+      margin-top: 2rem;
+    }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 16px 0;">We will share details on how to apply in a separate message in the coming days. We will continue to update the community at each stage of the process.</p>
+    .footer {
+      background: var(--mp-navy);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.75rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer p { margin: 0.25rem 0; font-size: 0.9rem; }
+    .footer a { color: var(--mp-gold); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
 
-<p style="font-family:Georgia, serif; font-size:16px; line-height:1.6; color:#334155; margin:0 0 24px 0;">As always, you can reach the board at any time at <a href="mailto:info@mpyork.com" style="color:#c2740a; text-decoration:underline;">info@mpyork.com</a>.</p>
+    @media (max-width: 600px) {
+      .process-step { flex-direction: column; gap: 0.25rem; }
+      .process-step .step-date { flex: 0; }
+    }
+  </style>
+</head>
+<body>
 
-<p style="font-family:Georgia, serif; font-size:15px; line-height:1.6; color:#334155; margin:0; font-style:italic;">With gratitude,<br>The Board<br>Monterey Park HOA</p>
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
 
-</div>
+  <section class="ann-hero">
+    <div class="kicker">A Note from the Board</div>
+    <h1>Thank you, Tracy</h1>
+    <p class="subtitle">A board update and what comes next for our community.</p>
+  </section>
 
-<!-- Gold rule -->
-<div style="height:3px; background-color:#f39c0c;"></div>
+  <div class="wrap">
 
-<!-- Slate footer -->
-<div style="background-color:#334155; padding:20px 28px; text-align:center;">
-<p style="margin:0; font-size:13px; color:#cbd5e1; line-height:1.6; font-family:Arial, sans-serif;">Park Notes &nbsp;&middot;&nbsp; Monterey Park HOA &nbsp;&middot;&nbsp; York, SC</p>
-<p style="margin:6px 0 0 0; font-size:13px; color:#cbd5e1; line-height:1.6; font-family:Arial, sans-serif;">mpyork.com &nbsp;&middot;&nbsp; info@mpyork.com</p>
-<p style="margin:12px 0 0 0; font-size:12px; color:#94a3b8; line-height:1.6; font-family:Arial, sans-serif;"><a target="_blank" rel="noopener noreferrer nofollow" style="color:#f39c0c; text-decoration:none;" href="https://mpyork.com/privacy">Privacy Policy</a> &nbsp;&middot;&nbsp; <a target="_blank" rel="noopener noreferrer nofollow" style="color:#f39c0c; text-decoration:none;" href="{Unsubscribe link}">Unsubscribe</a></p>
-</div>
+    <div class="ann-section">
+      <p>We want to share with the community that Tracy Blech has decided to step down from the board for personal and health reasons.</p>
 
-</div>
-</div>
+      <p>Tracy has served thoughtfully since the homeowner-led board began in January. She contributed time, energy, and care to the work of standing up our community's first resident-led governance. We are deeply grateful for everything she gave to this community, and we will miss her on the board.</p>
+
+      <p>We respect her decision fully, and we ask the community to do the same. Please join us in wishing Tracy and her family well.</p>
+
+      <p>Tracy, thank you. For your service, your thoughtfulness, and your care. We wish you and your family the very best.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="ann-section">
+      <h2>Respect for those who serve</h2>
+      <p>Volunteer board members give their time to serve this community. They deserve to be able to do that work with the kind of respect that any neighbor would extend to another. That standard matters not just for the people currently serving, but for everyone who may serve in the future.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="ann-section">
+      <h2>What Comes Next</h2>
+      <h3>Filling the open board seat</h3>
+
+      <p>Our bylaws, Article V Section 4(b), provide that vacancies caused by resignation are filled by majority vote of the remaining members of the board. Our bylaws do not permit an official membership vote to fill a vacancy during a board member's term. While we are not required to do this, we believe it is a good opportunity to promote transparency and encourage community involvement in the process.</p>
+
+      <p>Over the next several weeks, the board will follow this process:</p>
+
+      <div class="process-list">
+        <div class="process-step">
+          <div class="step-date">July 1 - 15</div>
+          <div class="step-text">Application window. Neighbors who are interested in serving are invited to apply.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-date">July 16 - 22</div>
+          <div class="step-text">Interviews. The board will reach out to applicants by email.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-date">July 23 - 24</div>
+          <div class="step-text">Finalists selected based on our criteria.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-date">July 25 - Aug 1</div>
+          <div class="step-text">Informal, non-binding community vote on the finalists.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-date">August 5</div>
+          <div class="step-text">Appointment announced.</div>
+        </div>
+      </div>
+
+      <p>We will share details on how to apply in a separate message in the coming days. We will continue to update the community at each stage of the process.</p>
+
+      <p>As always, you can reach the board at any time at <a href="mailto:info@mpyork.com" style="color: var(--mp-gold);">info@mpyork.com</a>.</p>
+
+      <p class="signature">With gratitude,<br>
+      The Board<br>
+      Monterey Park HOA</p>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; <span id="currentYear"></span> Monterey Park HOA. All rights reserved.</p>
+    <p><a href="index.html">Return home</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
