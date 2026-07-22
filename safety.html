@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monterey Park HOA - Community Safety Tips and Updates">
+  <title>Safety Tips and Updates | Monterey Park HOA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
+
+  <style>
+    :root {
+      --mp-navy: #1C3D5A;
+      --mp-teal: #2E7D8A;
+      --mp-gold: #C7913B;
+      --mp-ink: #1F2A30;
+      --mp-cream: #F4F0E6;
+      --mp-gray: #F3F5F4;
+      --mp-line: #e3e8e7;
+    }
+
+    .safety-hero {
+      background: var(--mp-navy);
+      color: #fff;
+      padding: 5.5rem 1rem 2.5rem;
+      text-align: center;
+    }
+    .safety-hero .kicker {
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--mp-gold);
+      margin-bottom: 0.5rem;
+    }
+    .safety-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      margin: 0 0 0.9rem;
+      line-height: 1.12;
+    }
+    .safety-hero .subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.06rem;
+      line-height: 1.6;
+      opacity: 0.93;
+    }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      color: #fff; text-decoration: none; font-weight: 600;
+      position: fixed; top: 1rem; left: 1rem; z-index: 60;
+      background: rgba(0,0,0,0.25); padding: 0.5rem 0.85rem; border-radius: 999px; backdrop-filter: blur(4px);
+    }
+    .back-link:hover { background: rgba(0,0,0,0.4); }
+
+    .wrap { max-width: 760px; margin: 2.5rem auto; padding: 0 1.25rem; }
+
+    .safety-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .safety-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: var(--mp-navy);
+      margin: 0 0 1rem;
+      font-weight: 700;
+    }
+
+    .safety-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--mp-ink);
+      margin: 0 0 1.1rem;
+    }
+
+    .highlight-card {
+      background: var(--mp-cream);
+      border-left: 5px solid var(--mp-gold);
+      padding: 1.4rem 1.6rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-card .label {
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--mp-gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .highlight-card p {
+      margin: 0 0 0.6rem;
+      font-size: 1.02rem;
+    }
+    .highlight-card p:last-child {
+      margin: 0;
+    }
+
+    .highlight-card a {
+      color: var(--mp-gold);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .tips-list li {
+      padding: 1rem 1.25rem;
+      background: var(--mp-gray);
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: var(--mp-ink);
+      border-left: 4px solid var(--mp-navy);
+    }
+
+    .tips-list li strong {
+      color: var(--mp-navy);
+      display: block;
+      margin-bottom: 0.25rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .contact-item {
+      padding: 1rem 1.25rem;
+      background: var(--mp-gray);
+      border-radius: 8px;
+      border-left: 4px solid var(--mp-gold);
+    }
+
+    .contact-item .contact-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--mp-gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-item .contact-value {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--mp-navy);
+    }
+
+    .contact-item .contact-value a {
+      color: var(--mp-navy);
+      text-decoration: none;
+    }
+    .contact-item .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--mp-line);
+      margin: 2.5rem 0;
+    }
+
+    .signature {
+      font-style: italic;
+      color: var(--mp-ink);
+      margin-top: 2rem;
+    }
+
+    .footer {
+      background: var(--mp-navy);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 1.75rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer p { margin: 0.25rem 0; font-size: 0.9rem; }
+    .footer a { color: var(--mp-gold); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
+
+  <section class="safety-hero">
+    <div class="kicker">Tips and Updates</div>
+    <h1>Staying Aware and Safe</h1>
+    <p class="subtitle">Simple habits to help keep our community, our cars, and our homes secure.</p>
+  </section>
+
+  <div class="wrap">
+
+    <div class="safety-section">
+      <p>We wanted to share a brief safety reminder with the community. There have been reports of attempted and actual break-ins in and around our area recently, including car break-ins. We think it is worth a note to encourage everyone to stay aware.</p>
+
+      <p>This is not a cause for alarm. Most property crimes are preventable with simple habits.</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="label">Stay Informed</div>
+      <p>For current crime statistics and reports for York County, visit the York County Sheriff's Office annual report and crime information page at <a href="https://www.yorkcountysheriff.com">yorkcountysheriff.com</a>.</p>
+    </div>
+
+    <div class="safety-section">
+      <h2>Simple Habits That Help</h2>
+
+      <ul class="tips-list">
+        <li><strong>Lock your car.</strong>Every time. Most vehicle break-ins target unlocked cars.</li>
+        <li><strong>Do not leave valuables visible.</strong>Wallets, laptops, purses, and shopping bags in plain sight invite trouble. Store them in the trunk or take them inside.</li>
+        <li><strong>Do not leave keys or garage door openers in your car.</strong>A garage door opener in an unlocked car can give a thief access to your home.</li>
+        <li><strong>Park in your driveway or garage when possible.</strong>Vehicles parked on the street are more likely to be targeted. Keeping cars off the street when you can helps reduce that risk.</li>
+        <li><strong>Close and lock the garage door.</strong>Even when you are home. An open garage is an invitation.</li>
+        <li><strong>Turn on exterior lights at night.</strong>Well-lit driveways and porches are less attractive to would-be thieves.</li>
+        <li><strong>Look out for your neighbors.</strong>If you see something that seems off, do not confront it. Note what you can (vehicle, direction, description) and report it to the York County Sheriff's Office or call 911.</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="safety-section">
+      <h2>Where to Report and Stay Informed</h2>
+
+      <p>Property crime is a law enforcement matter, and reports should go directly to the York County Sheriff's Office, not the HOA.</p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Emergency (in progress)</div>
+          <div class="contact-value"><a href="tel:911">911</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Non-emergency reports</div>
+          <div class="contact-value"><a href="tel:8036283056">803-628-3056</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Website</div>
+          <div class="contact-value"><a href="https://www.yorkcountysheriff.com" target="_blank" rel="noopener noreferrer">yorkcountysheriff.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Facebook</div>
+          <div class="contact-value"><a href="https://www.facebook.com/YCSOSC" target="_blank" rel="noopener noreferrer">facebook.com/YCSOSC</a></div>
+        </div>
+      </div>
+
+      <p>If you see something that concerns you, report it. The sheriff's office would rather receive a call that turns out to be nothing than miss something that was real.</p>
+
+      <p>Thanks for looking out for one another.</p>
+
+      <p class="signature">Stay safe.</p>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; <span id="currentYear"></span> Monterey Park HOA. All rights reserved.</p>
+    <p><a href="index.html">Return home</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
